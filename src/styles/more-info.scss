@@ -1,8 +1,14 @@
+@import './base/mixins';
+
 .info {
   $parent: &;
   background-color: #fff;
   border-radius: 20px;
   padding: 32px;
+  @include mq-sm {
+    padding: 12px;
+    margin: -20px 10px 50px 10px;
+  }
   &__item {
     h2 {
       color: var(--orange);

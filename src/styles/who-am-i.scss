@@ -1,7 +1,13 @@
+@import './base/mixins';
+
 .whoAmI {
   $parent: &;
   min-height: 430px;
   color: #fff;
+  margin-top: 90px;
+  @include mq-sm {
+    margin: 110px 0;
+  }
   &__info {
     font-size: 1.1rem;
     h2 {

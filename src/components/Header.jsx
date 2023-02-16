@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import personalLogo from '../assets/logo.svg';
-import '../styles/header.css';
+import '../styles/header.scss';
 
 const Header = () => {
   const [menuButton, setMenuButton] = useState(false);
 
   return (
-    <header className='container flex items-center justify-between mx-auto header'>
+    <header className='container flex items-center justify-between mx-auto header px-4'>
       <div>
         <a href='/'>
           <img src={personalLogo} width={60} height={60} alt='Personal logo' />
@@ -26,10 +26,18 @@ const Header = () => {
           menuButton ? 'header__full-screen' : 'md:flex'
         }`}
       >
-        <a href='#'>Who am I</a>
-        <a href='#'>Soft skills</a>
-        <a href='#'>Stack</a>
-        <a href='#'>Let's talk</a>
+        <a href='#' onClick={() => setMenuButton(false)}>
+          Who am I
+        </a>
+        <a href='#' onClick={() => setMenuButton(false)}>
+          Soft skills
+        </a>
+        <a href='#' onClick={() => setMenuButton(false)}>
+          Stack
+        </a>
+        <a href='#' onClick={() => setMenuButton(false)}>
+          Let's talk
+        </a>
       </div>
     </header>
   );

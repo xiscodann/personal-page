@@ -1,24 +1,28 @@
 ---
 import { Image } from '@astrojs/image/components';
-import music from '../assets/music.svg';
+import vinile from '../assets/vinile.svg';
 import '../styles/who-am-i.scss';
 ---
 
 <section
-  class='max-w-screen-lg mx-auto grid md:grid-cols-2 grid-cols-1 whoAmI items-center'
+  class='max-w-screen-lg mx-auto grid md:grid-cols-2 grid-cols-1 whoAmI items-center px-8 text-center md:text-left'
 >
   <div class='whoAmI__info'>
     <h2>Who am I?</h2>
-    <p>
-      I am a Colombian motivated by the relationship between design and
-      development. I have with 4 years of experience. I seek to constantly learn
-      and seek optimal solutions between the company and the end user.
+    <p class='pb-12'>
+      Frontend Developer + Digital Designer with 4 years of experience looking
+      for optimal solutions for the end user and the company. I have 2 years
+      serving as a Frontend team leader running development based on React JS. I
+      like to constantly learn either technologies, methodologies or reinforce
+      soft skills and teach my knowledge in development and design.
     </p>
   </div>
-  <div class='flex items-center justify-end whoAmI__like gap-6'>
+  <div
+    class='flex items-center md:justify-end justify-center whoAmI__like gap-6'
+  >
     <p>I like</p>
     <div class='grid place-items-center whoAmI__like--svg'>
-      <Image src={music} width={124} height={124} alt='I like music' />
+      <Image src={vinile} width={124} height={124} alt='I like music' />
     </div>
   </div>
 </section>

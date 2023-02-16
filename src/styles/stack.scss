@@ -1,6 +1,17 @@
+@import './base/mixins';
+
+$animation-timing: 20s;
+$carousel-items: 12;
+$animation-delay-fraction: calc($animation-timing / $carousel-items);
+$animation-steps-fraction: calc(100 / $carousel-items);
+$slide-change-timing: 4;
+
 .stack {
   $parent: &;
   min-height: 500px;
+  @include mq-md {
+    padding-bottom: 50px;
+  }
   &__list {
     h2 {
       color: var(--orange);
@@ -49,73 +60,86 @@
 .stack-animation {
   $parent: &;
   position: relative;
+  min-height: 375px;
+  width: 540px;
+  margin: auto;
   &__item {
     border-radius: 10px;
     padding: 10px 40px;
-
+    position: absolute;
+    pointer-events: none;
+    top: 40%;
+    left: 0;
+    animation: animate $animation-timing linear infinite reverse;
+    background-color: var(--gray);
+    width: 100%;
+    opacity: 0;
     p {
       color: #fff;
       span {
         color: var(--gray-light);
       }
     }
+    &:last-child {
+      animation-delay: calc(-#{$animation-delay-fraction} * 2);
+    }
+  }
+}
 
-    &.first {
-      position: absolute;
-      background-color: #313131;
-      top: 15%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 500px;
-      scale: 0.75;
-      transform-origin: 0;
-      opacity: 0.2;
-      z-index: 1;
+@media (max-width: 630px) {
+  .stack-animation {
+    width: 100%;
+  }
+}
+
+/*@media (max-width: 760px) {
+  .stack-animation {
+    &__item {
+      left: 10%;
     }
-    &.secondary-first {
-      position: absolute;
-      background-color: #4a4a4a;
-      top: 30%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 500px;
-      scale: 0.9;
-      transform-origin: 0;
-      opacity: 0.4;
-      z-index: 2;
-    }
-    &.active {
-      position: absolute;
-      background-color: var(--gray);
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 500px;
-      z-index: 3;
-    }
-    &.secondary-last {
-      position: absolute;
-      background-color: #4a4a4a;
-      top: 68%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 500px;
-      scale: 0.9;
-      transform-origin: 0;
-      opacity: 0.4;
-      z-index: 2;
-    }
-    &.last {
-      position: absolute;
-      background-color: #313131;
-      top: 80%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 500px;
-      scale: 0.75;
-      transform-origin: 0;
-      opacity: 0.2;
-      z-index: 1;
-    }
+  }
+}*/
+
+@for $i from 1 through ($carousel-items - 1) {
+  .stack-animation__item:nth-child(#{$i}) {
+    animation-delay: calc(
+      #{$animation-delay-fraction} * #{$i - $carousel-items}
+    );
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(100%) scale(0.5);
+    opacity: 0;
+    visibility: hidden;
+  }
+  #{$slide-change-timing}%,
+  #{$animation-steps-fraction}% {
+    transform: translateY(100%) scale(0.7);
+    opacity: 0.4;
+    visibility: visible;
+  }
+  #{$animation-steps-fraction + $slide-change-timing}%,
+  #{$animation-steps-fraction * 2}% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    visibility: visible;
+  }
+  #{($animation-steps-fraction * 2) + $slide-change-timing}%,
+  #{$animation-steps-fraction * 3}% {
+    transform: translateY(-100%) scale(0.7);
+    opacity: 0.4;
+    visibility: visible;
+  }
+  #{($animation-steps-fraction * 3) + $slide-change-timing}% {
+    transform: translateY(-100%) scale(0.5);
+    opacity: 0;
+    visibility: visible;
+  }
+  100% {
+    transform: translateY(-100%) scale(0.5);
+    opacity: 0;
+    visibility: hidden;
   }
 }
