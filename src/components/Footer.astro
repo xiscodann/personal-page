@@ -1,0 +1,23 @@
+---
+import { Image } from '@astrojs/image/components';
+import like from '../assets/footer.png';
+import linkedin from '../assets/icons/linkedin.png';
+import github from '../assets/icons/github.png';
+import '../styles/footer.scss';
+---
+
+<footer class='flex flex-col items-center footer'>
+  <div class='footer__image'>
+    <Image src={like} width={42} height={38} alt='Thanks for watching' />
+  </div>
+  <p>Thanks for watching</p>
+  <div class='footer__social flex gap-4'>
+    <a href='#' target='_blank'>
+      <Image src={linkedin} alt='Linkedin' />
+    </a>
+    <a href='#' target='_blank'>
+      <Image src={github} alt='Github' />
+    </a>
+  </div>
+  <p class='mt-4'><small>2023</small></p>
+</footer>

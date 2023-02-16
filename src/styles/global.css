@@ -1,9 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: 'Poppins', sans-serif;
+:root {
+  --gray: #212121;
+  --gray-light: #b6b6b6;
+  --orange: #ff7300;
+  --white-light: #f9fafc;
+}
+html {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f6f6f6;
+}
+code {
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+.cover {
+  background-color: #313131;
+  border-radius: 0 0 50px 50px;
 }

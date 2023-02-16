@@ -1,0 +1,40 @@
+---
+import { Image } from '@astrojs/image/components';
+import creativity from '../assets/creativity.svg';
+import leadership from '../assets/leadership.svg';
+import flexibility from '../assets/flexibility.svg';
+import '../styles/skills.scss';
+---
+
+<section class='max-w-screen-lg mx-auto skills'>
+  <div class='grid grid-cols-4 items-center place-items-center skills__map'>
+    <div class='skills__map--item'>
+      <Image
+        src={creativity}
+        width={124}
+        height={124}
+        alt='Soft skill - Creativity'
+      />
+      <p>Creativity</p>
+    </div>
+    <div class='skills__map--item'>
+      <Image
+        src={leadership}
+        width={124}
+        height={124}
+        alt='Soft skill - Leadership'
+      />
+      <p>Leadership</p>
+    </div>
+    <div class='skills__map--item'>
+      <Image
+        src={flexibility}
+        width={124}
+        height={124}
+        alt='Soft skill - Flexibility'
+      />
+      <p>Flexibility</p>
+    </div>
+    <h2>Soft skills</h2>
+  </div>
+</section>

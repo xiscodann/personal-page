@@ -1,0 +1,167 @@
+---
+import { Image } from '@astrojs/image/components';
+
+import html5 from '../assets/experience/html5.png';
+import css3 from '../assets/experience/css3.png';
+import javascript from '../assets/experience/javascript.png';
+import typescript from '../assets/experience/typescript.png';
+import react from '../assets/experience/react.png';
+import laravel from '../assets/experience/laravel.png';
+import bootstrap from '../assets/experience/bootstrap.png';
+import tailwind from '../assets/experience/tailwind.png';
+import figma from '../assets/experience/figma.png';
+import gatsby from '../assets/experience/gatsby.png';
+import redux from '../assets/experience/redux.png';
+
+import '../styles/stack.scss';
+
+const experience = [
+  {
+    name: 'HTML 5',
+    image: 'html5',
+    level: 'Main stack',
+  },
+  {
+    name: 'CSS 3',
+    image: 'html5',
+    level: 'Main stack',
+  },
+  {
+    name: 'Javascript',
+    image: 'javascript',
+    level: 'Main stack',
+  },
+  {
+    name: 'Typescript',
+    image: 'typescript',
+    level: 'Low',
+  },
+  {
+    name: 'React JS',
+    image: 'react',
+    level: 'Main stack',
+  },
+  {
+    name: 'Laravel',
+    image: 'laravel',
+    level: 'Low',
+  },
+  {
+    name: 'Bootstrap',
+    image: 'bootstrap',
+    level: 'High',
+  },
+  {
+    name: 'Tailwind',
+    image: 'tailwind',
+    level: 'Medium',
+  },
+  {
+    name: 'Figma',
+    image: 'figma',
+    level: 'Main stack',
+  },
+  {
+    name: 'Gatsby',
+    image: 'gatsby',
+    level: 'Medium',
+  },
+  {
+    name: 'Redux',
+    image: 'redux',
+    level: 'Medium',
+  },
+];
+---
+
+<section class='max-w-screen-lg mx-auto stack grid grid-cols-3'>
+  <div class='stack__list flex flex-col justify-center'>
+    <h2>Stack</h2>
+    <div>
+      <div class='stack__list--item flex justify-between items-center'>
+        <p class='stack__list--type'>Javascript</p>
+        <p class='stack__list--experience'>Main stack</p>
+      </div>
+      <div class='stack__list--item flex justify-between items-center'>
+        <p class='stack__list--type'>Typescript</p>
+        <p class='stack__list--experience'>Low</p>
+      </div>
+      <div class='stack__list--item flex justify-between items-center'>
+        <p class='stack__list--type'>React js</p>
+        <p class='stack__list--experience'>Low</p>
+      </div>
+      <div class='stack__list--item flex justify-between items-center'>
+        <p class='stack__list--type'>Laravel</p>
+        <p class='stack__list--experience'>Low</p>
+      </div>
+      <div class='stack__list--item flex justify-between items-center'>
+        <p class='stack__list--type'>Redux</p>
+        <p class='stack__list--experience'>Low</p>
+      </div>
+      <div class='stack__list--item flex justify-between items-center'>
+        <p class='stack__list--type'>React query</p>
+        <p class='stack__list--experience'>Low</p>
+      </div>
+    </div>
+    <div class='text-center'>
+      <button type='button' class='stack__list--button'>Load more</button>
+    </div>
+  </div>
+  <div class='col-span-2 stack-animation'>
+    <div
+      class='stack-animation__item flex justify-between items-center mx-auto first'
+    >
+      <div class='flex items-center gap-4'>
+        <div>
+          <Image src={react} width={70} height={70} alt='React' />
+        </div>
+        <p>Javascript</p>
+      </div>
+      <p><span>High</span></p>
+    </div>
+    <div
+      class='stack-animation__item flex justify-between items-center mx-auto secondary-first'
+    >
+      <div class='flex items-center gap-4'>
+        <div>
+          <Image src={react} width={70} height={70} alt='React' />
+        </div>
+        <p>Javascript</p>
+      </div>
+      <p><span>High</span></p>
+    </div>
+    <div
+      class='stack-animation__item flex justify-between items-center mx-auto active'
+    >
+      <div class='flex items-center gap-4'>
+        <div>
+          <Image src={react} width={70} height={70} alt='React' />
+        </div>
+        <p>React</p>
+      </div>
+      <p><span>Main stack</span></p>
+    </div>
+    <div
+      class='stack-animation__item flex justify-between items-center mx-auto secondary-last'
+    >
+      <div class='flex items-center gap-4'>
+        <div>
+          <Image src={react} width={70} height={70} alt='React' />
+        </div>
+        <p>Javascript</p>
+      </div>
+      <p><span>High</span></p>
+    </div>
+    <div
+      class='stack-animation__item flex justify-between items-center mx-auto last'
+    >
+      <div class='flex items-center gap-4'>
+        <div>
+          <Image src={react} width={70} height={70} alt='React' />
+        </div>
+        <p>Javascript</p>
+      </div>
+      <p><span>High</span></p>
+    </div>
+  </div>
+</section>

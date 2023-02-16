@@ -1,0 +1,44 @@
+---
+import { Image } from '@astrojs/image/components';
+import photo from '../assets/photo.png';
+import linkedin from '../assets/icons/linkedin.png';
+import github from '../assets/icons/github.png';
+import arrow from '../assets/icons/arrow.png';
+import '../styles/presentation.scss';
+---
+
+<section class='presentation'>
+  <div class='container mx-auto text-center max-w-screen-lg'>
+    <div class='presentation__data'>
+      <h4>Hello there,</h4>
+      <h1>I'm Daniel Ruiz</h1>
+      <h4><span>Digital designer and Frontend Developer</span></h4>
+      <div class='flex gap-4 presentation__data--button justify-center'>
+        <a class='active' href='#'>Let's talk</a>
+        <a href='#'>Who am I?</a>
+      </div>
+    </div>
+    <div class='flex justify-around column-4 presentation__social'>
+      <div
+        class='flex flex-col justify-end items-center mb-52 relative presentation__social--icons'
+      >
+        <a href='#' target='_blank'>
+          <Image src={linkedin} alt='Linkedin' />
+        </a>
+        <a href='#' target='_blank'>
+          <Image src={github} alt='Github' />
+        </a>
+      </div>
+      <div class='presentation__social--image'>
+        <Image src={photo} alt='Daniel Ruiz photo' />
+      </div>
+      <div
+        class='flex flex-col justify-end items-center mb-52 presentation__social--experience'
+      >
+        <button type='button'>
+          <Image src={arrow} alt='Scroll down' />
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
