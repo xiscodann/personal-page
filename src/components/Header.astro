@@ -1,0 +1,81 @@
+---
+import { Image } from '@astrojs/image/components';
+import personalLogo from '../assets/logo.svg';
+import '../styles/header.scss';
+---
+
+<header class={`header-container px-4`} id='header-container'>
+  <div class='container flex items-center justify-between mx-auto header'>
+    <div>
+      <a href='/'>
+        <img src={personalLogo} width={60} height={60} alt='Personal logo' />
+      </a>
+    </div>
+    <div class={`nav-icon md:hidden`}>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class={`hidden md:flex gap-14 header__menu`}>
+      <a href='#who-am-i'> Who am I</a>
+      <a href='#skills'> Soft skills</a>
+      <a href='#stack'> Stack</a>
+      <a href='#contact'> Let's talk</a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const headerTag = document.querySelector('#header-container');
+  const openMenu = document.querySelector('.nav-icon');
+  const menu = document.querySelector('.header__menu');
+
+  const removeMenu = () => {
+    openMenu.classList.remove('open');
+    menu.classList.remove('header__full-screen');
+    document.getElementsByTagName('body')[0].style.overflow = 'auto';
+  };
+  const addMenu = () => {
+    openMenu.classList.add('open');
+    menu.classList.add('header__full-screen');
+    document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+  };
+
+  const hideHeader = (value) => {
+    if (value <= 80) {
+      headerTag?.classList.add('active');
+    } else {
+      headerTag?.classList.remove('active');
+    }
+  };
+
+  const listenerNavButtons = () => {
+    if (menu) {
+      const buttons = [...menu.children];
+      buttons.forEach((element) => {
+        element.scrollIntoView({ behavior: 'smooth' });
+        element.addEventListener('click', removeMenu);
+      });
+    }
+  };
+
+  window.addEventListener('scroll', () => {
+    const scrollValue = window.pageYOffset;
+    if (headerTag) hideHeader(scrollValue);
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) removeMenu();
+  });
+
+  openMenu.addEventListener('click', () => {
+    if (!openMenu.classList.contains('open')) {
+      addMenu();
+    } else {
+      removeMenu();
+    }
+  });
+
+  hideHeader(window.pageYOffset);
+  listenerNavButtons();
+</script>

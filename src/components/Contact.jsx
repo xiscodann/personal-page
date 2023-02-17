@@ -3,7 +3,10 @@ import '../styles/contact.scss';
 
 const Contact = () => {
   return (
-    <section className='max-w-screen-sm mx-auto text-center contact flex flex-col justify-center gap-8 px-4'>
+    <section
+      className='max-w-screen-sm mx-auto text-center contact flex flex-col justify-center gap-8 px-4'
+      id='contact'
+    >
       <h2>Let's talk</h2>
       <div class='w-full'>
         <div class='bg-white relative rounded-lg p-8 sm:p-12 shadow-lg'>

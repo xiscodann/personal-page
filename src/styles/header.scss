@@ -3,6 +3,17 @@
   font-size: 14px;
   color: var(--gray-light);
 }
+.header-container {
+  $parent: &;
+  position: fixed;
+  transition: 0.2s all ease-in-out;
+  z-index: 200;
+  top: -95px;
+  width: 100%;
+  &.active {
+    top: 0;
+  }
+}
 
 .nav-icon {
   width: 30px;
@@ -49,6 +60,7 @@
     }
   }
 }
+
 .nav-icon.open {
   transition: all 0.2s;
   span {

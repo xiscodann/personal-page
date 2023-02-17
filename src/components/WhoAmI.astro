@@ -1,13 +1,15 @@
 ---
 import { Image } from '@astrojs/image/components';
+import Svg from '@jasikpark/astro-svg-loader';
 import vinile from '../assets/vinile.svg';
 import '../styles/who-am-i.scss';
 ---
 
 <section
-  class='max-w-screen-lg mx-auto grid md:grid-cols-2 grid-cols-1 whoAmI items-center px-8 text-center md:text-left'
+  class='max-w-screen-lg mx-auto grid md:grid-cols-3 grid-cols-1 whoAmI items-center px-8 text-center md:text-left'
+  id='who-am-i'
 >
-  <div class='whoAmI__info'>
+  <div class='whoAmI__info col-span-2'>
     <h2>Who am I?</h2>
     <p class='pb-12'>
       Frontend Developer + Digital Designer with 4 years of experience looking
@@ -21,8 +23,30 @@ import '../styles/who-am-i.scss';
     class='flex items-center md:justify-end justify-center whoAmI__like gap-6'
   >
     <p>I like</p>
-    <div class='grid place-items-center whoAmI__like--svg'>
-      <Image src={vinile} width={124} height={124} alt='I like music' />
+    <div class='grid place-items-center whoAmI__like--content'>
+      <Svg
+        class='whoAmI__like--svg vinile'
+        src={import('../assets/vinile.svg?raw')}
+        aria-label='Cool illustration of an abstract nebula'
+      />
+
+      <Svg
+        class='whoAmI__like--svg cup'
+        src={import('../assets/cup.svg?raw')}
+        aria-label='Cool illustration of an abstract nebula'
+      />
+
+      <Svg
+        class='whoAmI__like--svg beer'
+        src={import('../assets/beer.svg?raw')}
+        aria-label='Cool illustration of an abstract nebula'
+      />
+
+      <Svg
+        class='whoAmI__like--svg games'
+        src={import('../assets/games.svg?raw')}
+        aria-label='Cool illustration of an abstract nebula'
+      />
     </div>
   </div>
 </section>
