@@ -1,8 +1,5 @@
 ---
-import { Image } from '@astrojs/image/components';
-import creativity from '../assets/creativity.svg';
-import leadership from '../assets/leadership.svg';
-import flexibility from '../assets/flexibility.svg';
+import Svg from '@jasikpark/astro-svg-loader';
 import '../styles/skills.scss';
 ---
 
@@ -12,29 +9,23 @@ import '../styles/skills.scss';
     id='skills'
   >
     <div class='skills__map--item'>
-      <Image
-        src={creativity}
-        width={124}
-        height={124}
-        alt='Soft skill - Creativity'
+      <Svg
+        src={import('../assets/creativity.svg?raw')}
+        aria-label='Soft skill - Creativity'
       />
       <p>Creativity</p>
     </div>
     <div class='skills__map--item'>
-      <Image
-        src={leadership}
-        width={124}
-        height={124}
-        alt='Soft skill - Leadership'
+      <Svg
+        src={import('../assets/leadership.svg?raw')}
+        aria-label='Soft skill - Leadership'
       />
       <p>Leadership</p>
     </div>
     <div class='skills__map--item'>
-      <Image
-        src={flexibility}
-        width={124}
-        height={124}
-        alt='Soft skill - Flexibility'
+      <Svg
+        src={import('../assets/flexibility.svg?raw')}
+        aria-label='Soft skill - Flexibility'
       />
       <p>Flexibility</p>
     </div>
