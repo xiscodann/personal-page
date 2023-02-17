@@ -42,10 +42,19 @@
         border: 1px solid #fff;
         padding: 14px 40px;
         border-radius: 50px;
+        transition: 0.2s all;
+        &:hover {
+          background-color: #fff;
+          color: var(--gray);
+        }
       }
       .active {
         background-color: var(--orange);
         border: 0;
+        &:hover {
+          color: #fff;
+          background-color: #ff5e00;
+        }
       }
     }
   }
@@ -53,12 +62,22 @@
     &--icons {
       width: 100px;
       a {
-        filter: brightness(0) invert(1);
         border: 1px solid #fff;
         padding: 4px;
         width: 37px;
         border-radius: 8px;
         margin: 5px 0;
+        transition: 0.2s all;
+        img {
+          filter: brightness(0) invert(1);
+        }
+        &:hover {
+          background-color: #fff;
+          scale: 1.1;
+          img {
+            filter: brightness(0) invert(0.2);
+          }
+        }
       }
 
       &::before {
@@ -81,21 +100,32 @@
     &--image {
       margin: auto;
       width: 265px;
+      min-height: 450px;
+      @include mq-sm {
+        min-height: 350px;
+      }
     }
     &--experience {
       width: 100px;
-      button {
+      a {
         border: 1px solid var(--gray-light);
         border-radius: 50px;
         height: 50px;
         position: relative;
         width: 29px;
+        transition: 0.2s all;
         img {
           filter: brightness(1) invert(0.8);
           width: 27px;
           position: absolute;
           top: 5px;
           animation: scroll ease-in-out 1s infinite alternate;
+        }
+        &:hover {
+          border: 1px solid #fff;
+          img {
+            filter: brightness(1) invert(1);
+          }
         }
       }
     }

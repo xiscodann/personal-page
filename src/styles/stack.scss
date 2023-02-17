@@ -11,6 +11,7 @@ $slide-change-timing: 4;
   min-height: 500px;
   @include mq-md {
     padding-bottom: 50px;
+    scroll-margin: 60px;
   }
   &__list {
     h2 {

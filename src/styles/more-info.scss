@@ -5,9 +5,11 @@
   background-color: #fff;
   border-radius: 20px;
   padding: 32px;
+  font-size: 1rem;
   @include mq-sm {
     padding: 12px;
     margin: -20px 10px 50px 10px;
+    font-size: 0.9rem;
   }
   &__item {
     h2 {

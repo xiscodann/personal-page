@@ -12,11 +12,11 @@ import '../styles/footer.scss';
   </div>
   <p>Thanks for watching</p>
   <div class='footer__social flex gap-4'>
-    <a href='#' target='_blank'>
-      <Image src={linkedin} alt='Linkedin' />
+    <a href={import.meta.env.LINKEDIN} target='_blank'>
+      <Image src={linkedin} width={30} height={30} alt='Linkedin' />
     </a>
-    <a href='#' target='_blank'>
-      <Image src={github} alt='Github' />
+    <a href={import.meta.env.GITHUB} target='_blank'>
+      <Image src={github} width={30} height={30} alt='Github' />
     </a>
   </div>
   <p class='mt-4'><small>2023</small></p>

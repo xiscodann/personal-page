@@ -1,5 +1,5 @@
 ---
-import { Image } from '@astrojs/image/components';
+import { Image, Picture } from '@astrojs/image/components';
 import photo from '../assets/photo.png';
 import linkedin from '../assets/icons/linkedin.png';
 import github from '../assets/icons/github.png';
@@ -14,30 +14,35 @@ import '../styles/presentation.scss';
       <h1>I'm Daniel Ruiz</h1>
       <h4><span>Digital designer and Frontend Developer</span></h4>
       <div class='flex gap-4 presentation__data--button justify-center'>
-        <a class='active' href='#'>Let's talk</a>
-        <a href='#'>Who am I?</a>
+        <a class='active' href='#contact'>Let's talk</a>
+        <a href='#who-am-i'>Who am I?</a>
       </div>
     </div>
     <div class='flex justify-around column-4 presentation__social'>
       <div
         class='flex flex-col justify-end items-center md:mb-52 relative presentation__social--icons'
       >
-        <a href='#' target='_blank'>
+        <a href={import.meta.env.LINKEDIN} target='_blank'>
           <Image src={linkedin} width={30} height={30} alt='Linkedin' />
         </a>
-        <a href='#' target='_blank'>
+        <a href={import.meta.env.GITHUB} target='_blank'>
           <Image src={github} width={30} height={30} alt='Github' />
         </a>
       </div>
       <div class='presentation__social--image'>
-        <Image src={photo} width={1134} height={1909} alt='Daniel Ruiz photo' />
+        <Picture
+          src={photo}
+          widths={[450, 200]}
+          alt='Daniel Ruiz photo'
+          blur={true}
+        />
       </div>
       <div
         class='flex flex-col justify-end items-center md:mb-52 presentation__social--experience'
       >
-        <button type='button'>
+        <a href='#who-am-i'>
           <Image src={arrow} width={32} height={32} alt='Scroll down' />
-        </button>
+        </a>
       </div>
     </div>
   </div>

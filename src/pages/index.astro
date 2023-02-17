@@ -18,6 +18,11 @@ import Contact from '../components/Contact';
       <Skills />
       <Stack />
     </article>
-    <Contact client:visible />
+    <Contact
+      client:visible
+      si={import.meta.env.SERVICE_ID}
+      ti={import.meta.env.TEMPLATE_ID}
+      pk={import.meta.env.EMAIL_PUBLIC_KEY}
+    />
   </main>
 </Layout>

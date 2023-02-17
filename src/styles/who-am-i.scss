@@ -7,6 +7,7 @@
   margin-top: 90px;
   @include mq-sm {
     margin: 110px 0;
+    scroll-margin: 60px;
   }
   &__info {
     font-size: 1.1rem;

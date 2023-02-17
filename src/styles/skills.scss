@@ -4,6 +4,7 @@
   $parent: &;
   @include mq-md {
     margin: 20px 0 130px 0;
+    scroll-margin: 60px;
   }
   &__map {
     min-height: 450px;

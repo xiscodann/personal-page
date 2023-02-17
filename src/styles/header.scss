@@ -1,7 +1,14 @@
 .header {
+  $parent: &;
   height: 95px;
   font-size: 14px;
-  color: var(--gray-light);
+  &__menu {
+    color: var(--gray-light);
+    transition: 0.2s all;
+    a:hover {
+      color: #fff;
+    }
+  }
 }
 .header-container {
   $parent: &;
